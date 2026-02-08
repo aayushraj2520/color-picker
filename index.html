@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Scheme Generator</title>
+    <link rel="icon" href="./images/favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="color-scheme-app">
+      <!-- =========================
+           HEADER / NAVBAR
+           ========================= -->
+      <header class="header">
+        <nav class="nav" aria-label="Main navigation">
+          <!-- App title -->
+          <h1 class="title">Color Scheme</h1>
+
+          <!-- Theme toggle button (Light / Dark) -->
+          <button
+            class="theme-toggle-btn"
+            id="theme-toggle-btn"
+            aria-label="Toggle light and dark theme"
+            type="button"
+          >
+            🌙
+          </button>
+        </nav>
+      </header>
+
+      <!-- =========================
+           MAIN CONTENT
+           ========================= -->
+      <main>
+        <!-- =========================
+             OPTIONS / CONTROLS
+             ========================= -->
+        <section class="options" aria-label="Color scheme options">
+          <!-- Base color picker -->
+          <label for="seed-color" class="visually-hidden">
+            Choose base color
+          </label>
+          <input
+            type="color"
+            id="seed-color"
+            class="color-input"
+            name="seed"
+            aria-label="Choose base color"
+          />
+
+          <!-- Scheme mode selector -->
+          <label for="scheme-mode" class="visually-hidden">
+            Select color scheme mode
+          </label>
+          <select id="scheme-mode" class="mode-selector" name="mode">
+            <option value="monochrome">Monochrome</option>
+            <option value="monochrome-dark">Monochrome Dark</option>
+            <option value="monochrome-light">Monochrome Light</option>
+            <option value="analogic">Analogic</option>
+            <option value="complement">Complement</option>
+            <option value="analogic-complement">Analogic Complement</option>
+            <option value="triad">Triad</option>
+            <option value="quad">Quad</option>
+          </select>
+
+          <!-- Generate button -->
+          <button
+            id="get-color-scheme-btn"
+            class="btn btn-primary"
+            type="button"
+          >
+            Get color scheme
+          </button>
+        </section>
+
+        <!-- =========================
+             RESULTS
+             ========================= -->
+        <section class="result" aria-live="polite">
+          <!-- Loading indicator (shown during API call) -->
+          <div class="loader hidden" id="loader" aria-hidden="true"></div>
+
+          <!-- Generated color cards will be injected here -->
+          <div class="color-cards-list"></div>
+        </section>
+      </main>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
