@@ -142,7 +142,7 @@ main {
 }
 
 .mode-selector {
-  flex: 1;
+  flex: 2;
   padding: 0.5em;
   background-color: var(--bg);
   color: var(--text-main);
