@@ -149,7 +149,7 @@ main {
 }
 
 .btn-primary {
-  flex: 0 0 160px;
+  flex: 0 0 100px;
   border: none;
   background-color: var(--accent);
   color: #ffffff;
